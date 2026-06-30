@@ -11,8 +11,89 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Saira+Condensed:wght@500;600;700;800;900&family=Saira+Stencil+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero-copy.animate-fade-up {
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-badge.animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: #06070a;
+      color: #fff;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .preloader.loaded {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader-inner {
+      text-align: center;
+    }
+
+    .preloader .spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 1s ease infinite;
+      margin-bottom: 1rem;
+    }
+
+    .preloader p {
+      margin: 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+<body data-aos-duration="4000" data-aos onload="document.getElementById('preloader').classList.add('loaded')">
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Loading...</p>
+    </div>
+  </div>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -46,7 +127,7 @@
       </div>
       <div class="container hero-inner">
         <div class="hero-copy reveal">
-          <p class="eyebrow" href="#top1">Design — Development</p>
+          <p class="eyebrow">Design — Development</p>
           <h1 class="hero-title">Jandel<br><span>Lopez</span></h1>
           <p class="hero-tagline">Interfaces engineered for speed, precision, and feel.</p>
           <p class="hero-sub">Product designer and front-end developer building fast, considered digital experiences — from first sketch to shipped code.</p>
@@ -75,8 +156,20 @@
         <aside class="about-stack reveal" style="--delay:.1s">
           <h3>Toolkit</h3>
           <ul class="tag-list">
-            <li>php</li><li>laravel</li><li>javascript</li><li>mysql</li>
-            <li>Tailwind</li><li></li><li>Webflow</li><li>Three.js</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>php</li>
+            <li>C++</li>
+            <li>Visual Basic</li>
+            <li> Laravel</li>
+            <li>JavaScript</li>
+            <li>Mysql</li>
+            <li>Tailwind</li>
+            <li>Filament</li>
+            <li>Wordpress</li>
+            <li>M/SES</li>
+            <li>PVSI</li>
+            <li>TM-1</li>
           </ul>
         </aside>
       </div>
@@ -94,11 +187,11 @@
             <span class="stat-label">Years Building</span>
           </div>
           <div class="stat reveal" style="--delay:.08s">
-            <span class="stat-num" data-target="40" data-suffix="+">0</span>
+            <span class="stat-num" data-target="5" data-suffix="+">0</span>
             <span class="stat-label">Projects Shipped</span>
           </div>
           <div class="stat reveal" style="--delay:.16s">
-            <span class="stat-num" data-target="18" data-suffix="">0</span>
+            <span class="stat-num" data-target="3" data-suffix="">0</span>
             <span class="stat-label">Clients Worldwide</span>
           </div>
           <div class="stat reveal" style="--delay:.24s">
@@ -114,21 +207,21 @@
         <div class="build-grid">
           <article class="build-card reveal">
             <p class="build-tag">Web App</p>
-            <h3>Velocity</h3>
-            <p class="build-desc">A performance-focused dashboard for tracking real-time logistics data.</p>
-            <p class="build-stack">React · TypeScript · D3.js</p>
+            <h3>Portfolio website</h3>
+            <p class="build-desc">A performance-focused dashboard for portfolio data.</p>
+            <p class="build-stack">HTML · CSS · JavaScript</p>
           </article>
           <article class="build-card reveal" style="--delay:.08s">
             <p class="build-tag">Brand + Site</p>
-            <h3>Northbound</h3>
-            <p class="build-desc">Brand identity and marketing site for an outdoor apparel startup.</p>
-            <p class="build-stack">Figma · Webflow</p>
+            <h3>THE NEST</h3>
+            <p class="build-desc">Brand identity and booking site for need in workspace.</p>
+            <p class="build-stack">Laravel-Filament · Php · Tailwind </p>
           </article>
           <article class="build-card reveal" style="--delay:.16s">
             <p class="build-tag">Mobile</p>
-            <h3>Pulse</h3>
-            <p class="build-desc">Cross-platform fitness app with on-device workout analytics.</p>
-            <p class="build-stack">React Native · Firebase</p>
+            <h3>MLG Social App</h3>
+            <p class="build-desc">Cross-platform social app with on-device workout analytics.</p>
+            <p class="build-stack">Adalo · JavaScript</p>
           </article>
         </div>
       </div>
@@ -141,12 +234,12 @@
           <p class="eyebrow">Contact</p>
           <h2>Let's build something.</h2>
           <p>Have a project in mind, or just want to talk shop? Send a note — every message gets read.</p>
-          <a href="mailto:[email protected]" class="contact-email">[email protected]</a>
+          <a href="mailto:jandellopez1997@gmail.com" class="contact-email">[jandellopez1997@gmail.com]</a>
           <ul class="social-row">
-            <li><a href="#" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a></li>
-            <li><a href="#" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></li>
-            <li><a href="#" target="_blank" rel="noopener">X / Twitter <span class="arrow" aria-hidden="true">↗</span></a></li>
-            <li><a href="#" target="_blank" rel="noopener">Dribbble <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/Jandel2023" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.linkedin.com/in/jandellopez/" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://web.facebook.com/demski.chu2xbrothers" target="_blank" rel="noopener">Facebook <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.instagram.com/demski1997/" target="_blank" rel="noopener">Instagram <span class="arrow" aria-hidden="true">↗</span></a></li>
           </ul>
         </div>
         <form class="contact-form reveal" style="--delay:.1s" id="contact-form">
@@ -169,11 +262,12 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="#top" class="wordmark small">Jandel<span>Lopez</span></a>
+      <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="wordmark small">Jandel<span>Lopez</span></a>
       <p class="footer-meta">© 2026 Jandel Lopez. Designed &amp; built with care.</p>
-      <a href="#top1" class="back-to-top" aria-label="Back to top">↑</a>
+      <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
     </div>
   </footer>
 <script src="script.js" defer></script>
+ <script src="bower_components/aos/dist/aos.js"></script> 
 </body>
 </html>
